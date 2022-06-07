@@ -1,0 +1,28 @@
+/*
+style       ID      Classes,   atributos e pseudo-classes    Elementos e pseudo-elementos
+1            1       0                                        0
+0            0       1                                        0
+0            1       1                                        0
+
+!important
+*/
+
+body#b.bclass p#p.p {
+  background: purple !important;
+}
+
+p {
+  background: blue;
+}
+
+#p {
+  background: red;
+}
+
+#p.p {
+  background: yellow;
+}
+
+p#p.p {
+  background: red;
+}
