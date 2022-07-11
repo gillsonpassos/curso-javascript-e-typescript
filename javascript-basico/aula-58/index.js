@@ -2,6 +2,12 @@
 // Função Fabrica -> objetos
 // Construtora -> Pessoa (new)
 function Pessoa(nome, sobrenome) {
+  // Atributos ou métodos Privados
+  const ID = 123456;
+
+  const metodoInterno = function () {};
+
+  // atributos ou métodos publicos
   this.nome = nome;
   this.sobrenome = sobrenome;
 
