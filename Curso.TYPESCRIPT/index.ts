@@ -1,1 +1,3 @@
-console.log('Olá Mundo');
+const nome = 'gilson';
+const sobrenome = 'Passos';
+const apelido = 'gil';
