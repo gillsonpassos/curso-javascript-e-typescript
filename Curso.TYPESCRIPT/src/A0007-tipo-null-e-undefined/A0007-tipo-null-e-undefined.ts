@@ -15,7 +15,7 @@ export function creatPerson(
   };
 }
 
-export function squereOf(x: any) {
+export function squereOf(x: unknown) {
   if (typeof x === 'number') return x * x;
   return null;
 }
