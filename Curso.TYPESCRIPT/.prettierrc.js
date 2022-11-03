@@ -1,5 +1,5 @@
 module.exports = {
-  parser: 'babel',
+  // parser: 'babel',
   semi: true,
   trailingComma: 'all',
   singleQuote: true,
