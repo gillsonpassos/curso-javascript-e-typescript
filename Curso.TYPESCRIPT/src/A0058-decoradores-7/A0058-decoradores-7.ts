@@ -1,29 +1,31 @@
-function decorador(
-  classPrototype: any,
-  nomeMetodo: string | symbol,
-  index: number,
-): any {
-  console.log(classPrototype);
-  console.log(nomeMetodo);
-  console.log(index);
+function decorador(classPrototype: any, nome: string | symbol): any {
+  let valorPropriedade: any;
+  return {
+    get: () => valorPropriedade,
+    set: (valor: any) => {
+      if (typeof valor === 'string') {
+        valorPropriedade = valor.split('').reverse().join('');
+        return;
+      }
+      valorPropriedade = valor;
+    },
+  };
 }
 
 export class UmaPessoa {
+  @decorador
   nome: string;
+  @decorador
   sobrenome: string;
   idade: number;
 
-  constructor(
-    @decorador nome: string,
-    @decorador sobrenome: string,
-    @decorador idade: number,
-  ) {
+  constructor(nome: string, sobrenome: string, idade: number) {
     this.nome = nome;
     this.sobrenome = sobrenome;
     this.idade = idade;
   }
 
-  metodo(@decorador msg: string): string {
+  metodo(msg: string): string {
     return `${this.nome} ${this.sobrenome}: ${msg}`;
   }
 
@@ -40,6 +42,6 @@ export class UmaPessoa {
   }
 }
 
-const pessoa = new UmaPessoa('bob', 'esponja', 50);
+const pessoa = new UmaPessoa('boy', 'esponja', 50);
 const metodo = pessoa.metodo('OLÁ MUNDO!');
 console.log(metodo);
